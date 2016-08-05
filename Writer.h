@@ -27,11 +27,9 @@ public:
 
 		if ((millis() - time) >= timeThreshold) {
 			master->setTarget(servo, pos);
-			time = millis() / 100;
+			time = millis();
 			return true;
 		}
-		Serial.print(millis());
-
 		time = millis();
 		return false;
 	}
